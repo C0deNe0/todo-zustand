@@ -48,6 +48,19 @@ function App() {
                                                         />
                                                 </div>
                                         </form>
+                                
+                                <div className='mt-5'>
+                                  {todoState.todos.length >0  && todoState.todos.map((item) =>(
+                                        <div className='w-full rounded-lg p-2 border border-amber-400 mb-2 flex justify-between items-cente'>
+                                                <h1 key={item.id}>{item.todo}</h1>
+                                        </div>
+                                  )
+                                  
+                                  
+                                  )}
+
+                                </div>
+
                                 </div>
                         </div>
                 </>
