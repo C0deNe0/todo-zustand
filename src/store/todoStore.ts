@@ -13,8 +13,9 @@ type States = {
 
 type Actions = {
         addTodo: (todo: TodoType) => void;
-        // deleteTodo: ()
+        deleteTodo: (id:number) => void;
         toogleTodo: (id:number, isChecked: boolean) => void;
+
 };
 
 export const todoStore = create<States & Actions>()(
@@ -31,6 +32,9 @@ export const todoStore = create<States & Actions>()(
                                         }
                                         return item
                                     })
+                                })),
+                                deleteTodo:(id:number) =>set((state)=>({
+                                        todos:state.todos.filter((item)=> item.id !==id)
                                 }))
                             }),
                         { name: 'todoStore' }
